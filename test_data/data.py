@@ -51,7 +51,7 @@ class element:
     success_message_path = "//div[@class='oxd-toast oxd-toast--success oxd-toast-container--toast']"
 
     ## Delete employee
-    delete_employee_path = "//div[@role='table']//div[1]//div[1]//div[9]//div[1]//button[1]//i[1]"
+    delete_employee_path = "//div[@class='orangehrm-container']//div[3]//div[1]//div[9]//div[1]//button[1]//i[1]"
     confirm_delete_path = "//button[normalize-space()='Yes, Delete']"
     delete_success_message_path = "//div[@class='oxd-toast-content oxd-toast-content--success']"
 
