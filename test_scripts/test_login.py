@@ -14,7 +14,6 @@ class TestOrangeHRM():
         yield
         self.driver.quit()
 
-
     # Test Case ID: TC_Login_01 (Succesful Login)
     def test_login(self, bootup):
         self.driver.get(self.url)
@@ -30,24 +29,9 @@ class TestOrangeHRM():
 
         ## To check if the login was successful 
         assert self.driver.current_url == "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
-        
+        print("Login Successful!")
 
-    # Test Case ID: TC_Login_01 (Succesful Login)
-    def test_login(self, bootup):
-        self.driver.get(self.url)
 
-        ## To check if correct webpage is displayed
-        assert self.driver.title == "OrangeHRM"
-
-        self.driver.implicitly_wait(3)
-        self.driver.find_element(By.XPATH, data.element.username_input_box_path).send_keys(data.credentials.username)
-        self.driver.find_element(By.XPATH, data.element.password_input_box_path).send_keys(data.credentials.password)
-        self.driver.find_element(By.XPATH, data.element.login_button_path).click()
-        self.driver.implicitly_wait(3)
-
-        ## To check if the login was successful 
-        assert self.driver.current_url == "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
-        
 
     # Test Case ID: TC_Login_02 (Unsuccessful Login)
     def test_invalid_login(self, bootup):
@@ -66,26 +50,9 @@ class TestOrangeHRM():
         time.sleep(5)
         assert self.driver.find_element(By. XPATH, data.element.invalid_credentials_path).is_displayed()
         message = self.driver.find_element(By. XPATH, data.element.invalid_credentials_path).text
-        print("Error Message for Invalid Login ", message)
+        print("Error Message: ", message, "\n Login Unsuccessful!")
 
-    # Test Case ID: TC_Login_02 (Unsuccessful Login)
-    def test_invalid_login(self, bootup):
-        self.driver.get(self.url)
-        assert self.driver.title == "OrangeHRM"   # Test Case ID: TC_Login_02
-    def test_invalid_login(self, bootup):
-        self.driver.get(self.url)
-        assert self.driver.title == "OrangeHRM"
 
-        self.driver.implicitly_wait(3)
-        self.driver.find_element(By.XPATH, data.element.username_input_box_path).send_keys(data.credentials.username)
-        self.driver.find_element(By.XPATH, data.element.password_input_box_path).send_keys(data.credentials.invalid_password)
-        self.driver.find_element(By.XPATH, data.element.login_button_path).click()
-
-        ## To check if the login was unsuccessful
-        time.sleep(5)
-        assert self.driver.find_element(By. XPATH, data.element.invalid_credentials_path).is_displayed()
-        message = self.driver.find_element(By. XPATH, data.element.invalid_credentials_path).text
-        print("Error Message for Invalid Login ", message)
 
    # Test Case ID: TC_PIM_01
     def test_add_employee(self, bootup):
@@ -113,7 +80,9 @@ class TestOrangeHRM():
         time.sleep(5)
 
         ## To check if the employee was added
-        assert self.driver.find_element(By.XPATH, data.element.profile_name_path).text == data.credentials.first_name + " " + data.credentials.last_name
+        assert self.driver.find_element(By.XPATH, data.element.profile_name_path).is_displayed()
+        print("Employee added successfully!")
+
 
  
     # Test Case ID: TC_PIM_02
@@ -139,9 +108,12 @@ class TestOrangeHRM():
         self.driver.find_element(By.XPATH, data.element.edit_employee_path).click()
         self.driver.implicitly_wait(5)
         self.driver.find_element(By.XPATH, data.element.middle_name_path).send_keys("John")
-        self.driver.find_element(By.XPATH, data.element.save_button_path).click()
+        self.driver.find_element(By.XPATH, data.element.save_change_path).click()
         self.driver.implicitly_wait(3)
         assert self.driver.find_element(By.XPATH, data.element.success_message_path).is_enabled()
+        print("Employee details edited successfully!")
+
+
 
     # Test Case ID: TC_PIM_03
     def test_delete_employee(self, bootup):
@@ -168,3 +140,4 @@ class TestOrangeHRM():
         self.driver.find_element(By.XPATH, data.element.confirm_delete_path).click()
         self.driver.implicitly_wait(10)
         assert self.driver.find_element(By.XPATH, data.element.delete_success_message_path).is_enabled()
+        print("Employee deleted successfully!")
