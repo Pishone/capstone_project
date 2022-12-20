@@ -1,4 +1,5 @@
 ## Automation of [OrangeHRM demo site](https://opensource-demo.orangehrmlive.com/) as part of Guvi's capstone project.
+![](https://d36w3vgtkvgnsp.cloudfront.net/53964754958927242995fd73b8194b764123aca6.jpg)
 
 The above mentioned site has been automated using Python with Selenium and pytest frameworks. 
 
