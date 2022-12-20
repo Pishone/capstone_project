@@ -29,13 +29,13 @@ The above command will install dependensies and upgrade them if any update is av
 
 #### Explanation of the pytest command:
 - *pytest* > The framework we use for testing and generating report.
-- *-v* > -v, or --verbose, increases the verbosity level. Use '-vv' to increase level.
-- *-s* > Captures standard output since by default only failed cases show captured output.
-- *-x* > Stop after the first failed test. Use *--maxfail=N* for stopping after N failed cases.
-- *--capture=sys" > captures the std Out which is used in report.
+- *-v*  > -v, or --verbose, increases the verbosity level. Use '-vv' to increase level.
+- *-s*  > Captures standard output since by default only failed cases show captured output.
+- *-x*  > Stop after the first failed test. Use *--maxfail=N* for stopping after N failed cases.
+- *--capture=sys* > captures the std Out which is used in report.
 
 ### Other usefull flags to imprive report
-- *-k* > This option allows you to filter which tests to run, by matching their names against a “keyword expression”
-- *--pdb* makes pytest start PDB, Python’s built-in debugger, when a test fails. Rather than seeing static failure output, you can directly interact with the objects, in the test environment, right at the point of failure.
+- *-k*  > This option allows you to filter which tests to run, by matching their names against a “keyword expression”
+- *--pdb* > makes pytest start PDB, Python’s built-in debugger, when a test fails. Rather than seeing static failure output, you can directly interact with the objects, in the test environment, right at the point of failure.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
