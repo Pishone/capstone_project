@@ -43,5 +43,6 @@ Suggestions are always welcome!
 
 - *-k*  > This option allows you to filter which tests to run, by matching their names against a “keyword expression”
 - *--pdb* > makes pytest start PDB, Python’s built-in debugger, when a test fails. Rather than seeing static failure output, you can directly interact with the objects, in the test environment, right at the point of failure.
+- *--pastebin=failed / --pastebin=all*  > Send report to online pastebin services.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
