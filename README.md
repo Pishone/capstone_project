@@ -24,7 +24,7 @@ Suggestions are always welcome!
 
 ### Next steps
 - Run the following command in your preferred shell.
-> pip install -r -U requirements.txt
+> pip install -U -r requirements.txt
 
 - The above command will install dependensies and upgrade them if any update is available.
 
